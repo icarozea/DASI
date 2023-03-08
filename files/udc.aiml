@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  <category>
+    <pattern>*</pattern>
+    <template>
+        <random>
+            <li>No entiendo lo que dices</li>
+            <li>No tengo una respuesta para eso</li>
+            <li>¿Puede ser mas especifico?</li>
+        </random>
+    </template>
+  </category>
+  <category>
+      <pattern>EL <set>colores</set> ES UN COLOR</pattern>
+      <template>Si, el <star/> es un color</template>
+  </category>
+  <category>
+      <pattern>EL * ES UN COLOR</pattern>
+      <template>No, el <star/> no es un color</template>
+  </category>
+  <category>
+      <pattern>Cual es la capital de <set>provincias</set>^</pattern>
+      <template>
+          La capital de <star/> es <map name="capitalprovincias"><star/></map>.
+      </template>
+  </category>
+  <category>
+      <pattern>Cual es la capital de *</pattern>
+      <template>
+          No se cual es la capital de <star/>.
+      </template>
+  </category>
+  <category>
+    <pattern>^ SERIE ^</pattern>
+    <template>Te gustan las series?</template>
+  </category>
+  <category>
+      <pattern>SI</pattern>
+      <that>TE GUSTAN LAS SERIES</that>
+      <template>¿Cual es tu serie favorita?</template>
+  </category>
+  
+  <category>
+    <pattern>EL PASTO ES VERDE</pattern>
+    <template>Recordare que el pasto es verde
+        <learn>
+            <category>
+                <pattern>DE QUE COLOR ES EL PASTO</pattern>
+                <template>El pasto es verde</template>
+            </category>
+        </learn>
+    </template>
+  </category>
+  <category>
+    <pattern>EL * ES AZUL</pattern>
+    <template>Recordare que el <star/> es azul
+        <learn>
+            <category>
+                <pattern>DE QUE COLOR ES EL <eval><star/></eval></pattern>
+                <template>El <eval><star/></eval> es azul</template>
+            </category>
+        </learn>
+    </template>
+  </category>
+      
+  
+  
+</aiml>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

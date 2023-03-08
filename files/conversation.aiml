@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<category>
+        <pattern>HOLA ^</pattern>
+        <template>Hola ¿cual es tu nombre?</template>
+    </category>
+    <category>
+        <pattern>BUENOS DIAS</pattern>
+        <template><srai>HOLA</srai></template>
+    </category>
+    <category>
+        <pattern>BUENOS DÍAS</pattern>
+        <template><srai>HOLA</srai>, ¿ya desayunaste?</template>
+    </category>
+    <category>
+        <pattern>BUENAS TARDES</pattern>
+        <template><srai>HOLA</srai></template>
+    </category>
+    <category>
+        <pattern>BUEN DIA</pattern>
+        <template><srai>HOLA</srai></template>
+    </category>
+    <category>
+        <pattern>COMO ESTAS</pattern>
+        <template>Soy un robot.<br/> Yo vivo en una computadora</template>
+    </category>
+    <category>
+        <pattern>MI NOMBRE ES *</pattern>
+        <template>Hola <set name="nombre"><star/></set> Que edad tienes?</template>
+    </category>
+    <category>
+        <pattern>TENGO ^</pattern>
+        <that>HOLA ^ QUE EDAD TIENES</that>
+        <template>en que te puedo ayudar? <set name="edad"><star/></set></template>
+    </category>
+    <category>
+        <pattern>^</pattern>
+        <that>HOLA ^ QUE EDAD TIENES</that>
+        <template>
+            <set name="edad"><star/></set>
+            <br/>
+            De que quieres hablar?
+        </template>
+    </category>
+    <category>
+        <pattern>MI EDAD ES ^</pattern>
+        <that>HOLA ^ QUE EDAD TIENES</that>
+        <template><srai>TENGO</srai></template>
+    </category>
+    
+    
+    <category>
+        <pattern>CUANTOS AÑOS TIENES</pattern>
+        <template>TENGO <bot name="edadBot"/> AÑO</template>
+    </category>
+    
+    
+    <category>
+      <pattern>ADIOS</pattern>
+      <template>
+            <random>
+                <li>Chao</li>
+                <li>Adiós, me gusto hablar contigo </li>
+                <li>Fue un placer hablar contigo </li>
+                <li>Que tengas un buen días</li>
+                <li>Cuidate mucho</li>
+            </random>
+        </template>
+    </category>
+    
+    <category>
+      <pattern>ADIOS *</pattern>
+      <template>
+         <srai>ADIOS</srai>
+      </template>
+    </category>
+    <category>
+      <pattern>ADIÓS</pattern>
+      <template>
+         <srai>ADIOS</srai>
+      </template>
+    </category>
+    <category>
+      <pattern>CHAO</pattern>
+      <template>
+         <srai>ADIOS</srai>
+      </template>
+    </category>
+    
+    <category>
+      <pattern>MUCHAS GRACIAS</pattern>
+      <template>
+         <srai>ADIOS</srai>
+      </template>
+    </category>
+    
+    <category>
+      <pattern>COMO ESTAS</pattern>
+      <template>
+            <random>
+                <li>Estoy bien, ¿que tal tú?</li>
+                <li>Estoy bien, ¿que me dices de tí?</li>
+                <li>Bien, gracias por preguntar, ¿que tal tú?</li>
+            </random>
+        </template>
+    </category>
+
+</aiml>

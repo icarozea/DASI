@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    
+    <category>
+        <pattern>^ MASCOTAS ^</pattern>
+        <template>Que <set name="topic">mascotas</set> tienes?</template>
+    </category>
+    <category>
+        <pattern>^ MASCOTA ^</pattern>
+        <template><srai>MASCOTAS</srai></template>
+    </category>
+    <category>
+        <pattern>^ PERRO ^</pattern>
+        <template><srai>MASCOTAS</srai></template>
+    </category>
+    <category>
+        <pattern>^ GATO ^</pattern>
+        <template><srai>MASCOTAS</srai></template>
+    </category>
+    <category>
+        <pattern>^ ANIMAL^</pattern>
+        <template><srai>MASCOTAS</srai></template>
+    </category>
+    
+    <topic name="mascotas">
+        <category>
+              <pattern>^ PERRO ^</pattern>
+              <template>
+                    Me gustan mucho los animales<br/>
+                    cual es el nombre de tu <set name="pettype">perro</set>
+              </template>
+        </category>
+        <category>
+              <pattern>^ GATO ^</pattern>
+              <template>
+                    Me gustan mucho los animales<br/>
+                    cual es el nombre de tu <set name="pettype">gato</set>
+              </template>
+        </category>
+    	<category>
+              <pattern>^ NOMBRE ES ^</pattern>
+              <template>
+                    <set name="petname"><star index="2"/></set> es un lindo nombre<br/>
+                    <srai>*</srai>
+              </template>
+        </category>
+        
+        <category>
+          <pattern>CUAL ES EL NOMBRE DEL MI MASCOTA</pattern>
+          <template>
+             El nombre de tu mascota es <get name="petname"/>.
+          </template>
+        </category>
+        
+        <category>
+              <pattern>^ NINGUNA ^</pattern>
+              <template>
+                    no te gustan los animales?
+              </template>
+        </category>
+        
+        <category>
+            <pattern>*</pattern>
+            <template>
+                <random>
+                    <li>Cuentame mas</li>
+                    <li>Que es lo que mas amas de <get name="petname"/>?</li>
+                    <li>Como te hace sentir tú <get name="pettype"/>?</li>
+                    <li>Cuentame una de sus travesuras?</li>
+                    <li>Cuantos años tiene tu mascota?</li>
+                    <li>De que color es tu mascota?</li>
+                    <li>Le gusta dormir mucho a tu mascota?</li>
+                    <li>Come mucho tu mascota?</li>
+                    <li>Estas aburrido?, quieres hablar de otra cosa</li>
+                </random>
+            </template>
+        </category>
+    </topic>  
+</aiml>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    
+    <category>
+        <pattern>^ FUTBOL ^</pattern>
+        <template>Te gusta el <set name="topic">futbol</set>?</template>
+    </category>
+    
+    <category>
+        <pattern>^ EQUIPO FAVORITO ^</pattern>
+        <template>Mi equipo favorito es  <bot name="equipoFutbol"/></template>
+    </category>
+	
+	<topic name="futbol">
+        <category>
+            <pattern>^ SI ^</pattern>
+            <template>Cual es tu equipo favorito?</template>
+        </category>
+        <category>
+            <pattern>^ FAVORITO ES EL ^</pattern>
+            <template>
+                <think><set name="equipo"> <star index="2"/></set></think>
+                <condition name="equipo">
+                <li value="Madrid">El <get name="equipo"/> es el mejor equipo de Europa!!!</li>
+                <li value="Barcelona">El <get name="equipo"/> es el mejor equipo de España!!</li>
+                <li value="Atletico">El <get name="equipo"/> es conocido como los colchoneros</li>
+                <li>El <get name="equipo"/> no ha tenido una buena temporada ultimamente.</li>
+                </condition>
+            </template>
+        </category>
+        <category>
+            <pattern>El ^</pattern>
+            <template><srai>FAVORITO ES EL <star/></srai></template>
+        </category>
+        <category>
+            <pattern>^</pattern>
+            <that>CUAL ES TU EQUIPO FAVORITO</that>
+            <template><srai>FAVORITO ES EL <star/></srai></template>
+        </category>
+        <category>
+            <pattern>ME GUSTA EL *</pattern>
+            <template><srai>FAVORITO ES EL <star/></srai></template>
+        </category>
+        
+        <category>
+            <pattern>^ NO ^</pattern>
+            <template><set name="topic"></set>¿De que otra cosa quieres hablar?</template>
+        </category>
+        <category>
+            <pattern>*</pattern>
+            <template>
+                <random>
+                    <li>Cuentame mas</li>
+                    <li>Cuantos titulos tiene el <get name="equipo"/>?</li>
+                    <li>Que mas sabes de futbol?</li>
+                    <li>Cuentame mas</li>
+                    <li>Quieres hablar de ota cosa?</li>
+                    <li>Cual es mejor jugador de futbol actual?</li>
+                    <li>Sabes jugar al futbol?</li>
+                    <li>Que mas sabes del <get name="equipo"/>?</li>
+                    <li>Cuentame mas</li>
+                </random>
+            </template>
+        </category>
+    </topic>   
+</aiml>
