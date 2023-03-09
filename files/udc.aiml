@@ -30,16 +30,18 @@
           No se cual es la capital de <star/>.
       </template>
   </category>
-  <category>
-    <pattern>^ SERIE ^</pattern>
-    <template>Te gustan las series?</template>
-  </category>
-  <category>
-      <pattern>SI</pattern>
-      <that>TE GUSTAN LAS SERIES</that>
-      <template>¿Cual es tu serie favorita?</template>
-  </category>
-  
+
+    <category>
+        <pattern>EL MEJOR EQUIPO DE * ES ^</pattern>
+        <template>Recordare que el mejor equipo de <star/> es el <star index="2"/>. 
+            <learn>
+                <category>
+                    <pattern>Cual es el mejor equipo de <eval><star/></eval></pattern>
+                    <template>El mejor equipo de <eval><star/></eval> es el<eval><star index="2"/></eval></template>
+                </category>
+            </learn>
+        </template>
+    </category>
   <category>
     <pattern>EL PASTO ES VERDE</pattern>
     <template>Recordare que el pasto es verde
@@ -62,9 +64,6 @@
         </learn>
     </template>
   </category>
-      
-  
-  
 </aiml>
 
 

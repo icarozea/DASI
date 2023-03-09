@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    <category>
+        <pattern>^ SERIE ^</pattern>
+        <template>Te gustan las series?</template>
+    </category>
+    <category>
+        <pattern>SI</pattern>
+        <that>TE GUSTAN LAS SERIES</that>
+        <template>¿Cual es tu <set name="topic">serie</set> favorita?</template>
+    </category>
+    
+	
+	<topic name="serie">
+	    <category>
+            <pattern>ME GUSTA ^</pattern>
+            <template>
+                <set name="seriefavorita"><star/></set> es una buena serie<br/>
+                que tipo de series te gustan?
+            </template>
+        </category>
+        <category>
+            <pattern>^</pattern>
+            <that>SERIE FAVORITA</that>
+            <template><srai>ME GUSTA <star/></srai></template>
+        </category>
+	    <category>
+            <pattern>^ SERIES DE ^</pattern>
+            <template>
+                El <set name="serietipo"><star index="2"/></set> es un gran genero<br/>
+                Cual es la plataforma de videos que mas usas?
+            </template>
+        </category>
+        <category>
+            <pattern>^ USO ^</pattern>
+            <template>
+                 La mejor serie de <set name="serieplataforma"><star index="2"/> es </set><map name="seriesplataforma"><star index="2"/></map>
+            </template>
+        </category>
+        <category>
+            <pattern>*</pattern>
+            <template>
+                <random>
+                    <li>Que otro tipo de series te gustan?</li>
+                    <li>Habrá nueva temporada de <get name="seriefavorita"/>?</li>
+                    <li>Cual serie estas viendo ahora?</li>
+                    <li>Cuentame mas</li>
+                    <li>Que series de <get name="serieplataforma"/> me recomiendas?</li>
+                    <li>Que mas sabes de <get name="seriefavorita"/>?</li>
+                    <li>Cuentame mas</li>
+                </random>
+            </template>
+        </category>
+	    <category>
+            <pattern>^ NO ^</pattern>
+            <template><set name="topic"></set>¿De que otra cosa quieres hablar?</template>
+        </category>
+	</topic>
+</aiml>

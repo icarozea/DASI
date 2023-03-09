@@ -10,6 +10,19 @@
         <pattern>^ EQUIPO FAVORITO ^</pattern>
         <template>Mi equipo favorito es  <bot name="equipoFutbol"/></template>
     </category>
+    
+    <category>
+        <pattern>^ mejor equipo de <set>paises</set>^</pattern>
+        <template>
+          El mejor equipo de <star index="2"/> es <map name="mejorequipopais"><star index="2"/></map>.
+        </template>
+    </category>
+    <category>
+        <pattern>^ mejor equipo de *</pattern>
+        <template>
+          No se cual es el mejor equipo de <star/>.
+        </template>
+    </category>
 	
 	<topic name="futbol">
         <category>
@@ -61,6 +74,27 @@
                     <li>Cuentame mas</li>
                 </random>
             </template>
+        </category>
+        <!-- Parte generada con chatgpt-->
+        <category>
+            <pattern>¿QUIÉN ES EL MEJOR JUGADOR DE FÚTBOL?</pattern>
+            <template>El mejor jugador de fútbol es subjetivo, pero muchos consideran a Lionel Messi y Cristiano Ronaldo como los mejores de la última década.</template>
+        </category>
+        <category>
+            <pattern>¿QUIÉN GANÓ LA ÚLTIMA COPA MUNDIAL?</pattern>
+            <template>La última Copa Mundial de la FIFA fue ganada por Francia en 2018.</template>
+        </category>
+        <category>
+            <pattern>¿CUÁL ES EL EQUIPO MÁS EXITOSO DE LA HISTORIA?</pattern>
+            <template>El equipo más exitoso de la historia del fútbol es el Real Madrid, con 13 títulos de la Liga de Campeones de la UEFA y 34 títulos de la liga española.</template>
+        </category>
+        <category>
+            <pattern>¿CUÁNDO ES LA PRÓXIMA COPA MUNDIAL?</pattern>
+            <template>La próxima Copa Mundial de la FIFA será en Qatar en 2022.</template>
+        </category>
+        <category>
+            <pattern>*</pattern>
+            <template>No estoy seguro de entender tu pregunta. ¿Podrías reformularla?</template>
         </category>
     </topic>   
 </aiml>
